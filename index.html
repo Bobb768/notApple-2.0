@@ -394,31 +394,21 @@
             </div>
         </footer>
 
-        <script>
-            const elements = document.querySelectorAll('.fade-in');
+    <script>
+        // Fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.classList.add('visible');
+        });
 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.2
-            });
+        // Burger
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-center');
 
-            elements.forEach(el => observer.observe(el));
-        </script>
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
 
-        <script>
-            const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-center');
-
-            burger.addEventListener('click', () => {
-                burger.classList.toggle('active');
-                nav.classList.toggle('active');
-            });
-        </script>
-
-    </body>
-    </html>
+</body>
+</html>

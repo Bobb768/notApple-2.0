@@ -456,23 +456,20 @@ body {
     }
 
     .nav-center {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 70%;
-        background: white;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        transition: 0.4s ease;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        background: #f5f5f5;
+        gap: 20px;
+        padding: 20px;
+        display: none;
         z-index: 1000;
     }
 
     .nav-center.active {
-        right: 0;
+        display: flex;
     }
 
     .nav {
@@ -509,9 +506,15 @@ body {
     }
 
     .products-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .card {
+        flex: 1 1 280px;
+        max-width: 380px;
     }
 
     .card,
@@ -562,8 +565,26 @@ body {
     }
 
     .footer-wrapper {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
         gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .footer-col {
+        flex: 1 1 200px;
+        margin-bottom: 20px;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
