@@ -1,0 +1,601 @@
+/* =========================================================
+   1. BASE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #1c1c1c;
+    background: #ffffff;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   2. HEADER
+========================================================= */
+
+.header {
+    background: #f5f5f5;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-center {
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger span {
+    width: 26px;
+    height: 2px;
+    background: black;
+    transition: 0.3s ease;
+}
+
+.burger.active span:first-child {
+    transform: rotate(45deg) translateY(4px);
+}
+
+.burger.active span:last-child {
+    transform: rotate(-45deg) translateY(-4px);
+}
+
+.logo {
+    width: 50px;
+}
+
+
+/* =========================================================
+   3. HERO
+========================================================= */
+
+.hero {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #666;
+}
+
+
+/* =========================================================
+   4. BUTTONS
+========================================================= */
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: black;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #333;
+}
+
+.btn-outline {
+    border: 1px solid black;
+    color: black;
+}
+
+.btn-outline:hover {
+    background: black;
+    color: white;
+}
+
+
+/* =========================================================
+   5. SECTION TITLES
+========================================================= */
+
+.products-section {
+    padding: 120px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+
+/* =========================================================
+   6. PRODUCTS LAYOUT
+========================================================= */
+
+.products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+
+/* =========================================================
+   7. CARDS
+========================================================= */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 30px;
+    border-radius: 20px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    z-index: 5;
+}
+
+.card img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.card h2 {
+    font-size: 18px;
+    min-height: 48px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   8. FEATURED CARD
+========================================================= */
+
+.card-featured {
+    width: 360px;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    position: relative;
+}
+
+.card-featured:hover {
+    transform: translateY(-8px) scale(1.07);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.card-featured::before {
+    content: "Popular";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: black;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+/* =========================================================
+   9. CATEGORY STYLES
+========================================================= */
+
+/* iPhone */
+
+.card-iphone {
+    width: 320px;
+    background: #f5f5f7;
+}
+.card-iphone img {
+    height: 320px;
+}
+
+/* iPad */
+
+.card-ipad {
+    width: 320px;
+    background: #f0f0f2;
+}
+.card-ipad img {
+    height: 300px;
+}
+
+/* Mac */
+
+.card-mac {
+    width: 380px;
+    background: #e9e9eb;
+}
+.card-mac img {
+    height: 220px;
+}
+
+/* Watch */
+
+.card-watch {
+    width: 300px;
+    background: #f2f2f2;
+}
+.card-watch img {
+    height: 260px;
+}
+
+/* Accessories */
+
+.card-accessory {
+    width: 280px;
+    background: #ffffff;
+    border: 1px solid #eee;
+}
+.card-accessory img {
+    height: 240px;
+}
+
+
+/* =========================================================
+   10. SECTION BACKGROUNDS
+========================================================= */
+
+.iphone-section { background: #ffffff; }
+.ipad-section { background: #fafafa; }
+.mac-section { background: #f5f5f7; }
+.watch-section { background: #ffffff; }
+.accessories-section { background: #fafafa; }
+
+
+/* =========================================================
+   11. FEATURES
+========================================================= */
+
+.features {
+    padding: 100px 0;
+    background: #f5f5f7;
+}
+
+.features-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.feature {
+    text-align: center;
+}
+
+
+/* =========================================================
+   12. STATEMENT
+========================================================= */
+
+.statement {
+    padding: 140px 0;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+
+.statement h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+
+.footer {
+    background: #1c1c1c;
+    color: white;
+    padding: 60px 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* =========================================================
+   14. MEDIA
+========================================================= */
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .container {
+        padding: 0 30px;
+    }
+
+    .hero {
+        padding: 90px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .products-wrapper {
+        gap: 40px;
+    }
+
+    .card-iphone,
+    .card-ipad {
+        width: 280px;
+    }
+
+    .card-mac {
+        width: 320px;
+    }
+
+    .card-watch {
+        width: 260px;
+    }
+
+    .card-accessory {
+        width: 240px;
+    }
+
+    .card-featured {
+        width: 320px;
+    }
+
+    .statement h2 {
+        font-size: 38px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-center {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-center.active {
+        right: 0;
+    }
+
+    .nav {
+        height: 70px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .products-section {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .products-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .card,
+    .card-iphone,
+    .card-ipad,
+    .card-mac,
+    .card-watch,
+    .card-accessory,
+    .card-featured {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .card img {
+        height: 260px;
+    }
+
+    .card-iphone img,
+    .card-ipad img,
+    .card-mac img,
+    .card-watch img,
+    .card-accessory img {
+        height: 220px;
+    }
+
+    .card-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .features-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .statement {
+        padding: 100px 0;
+    }
+
+    .statement h2 {
+        font-size: 28px;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .statement h2 {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+}
